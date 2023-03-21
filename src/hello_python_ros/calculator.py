@@ -1,8 +1,11 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
-""" ROS Wrapper for the calculator module
 """
+    ROS Wrapper for the calculator module
 
+    Author: Olivier Lamarre
+    Affl.: STARS Laboratory, University of Toronto
+"""
 
 import rospy
 from geometry_msgs.msg import Point
@@ -11,13 +14,15 @@ from hello_python_ros.msg import CalculatorResult
 # Calculator from our pure Python project
 from hello import calculator
 
+
 class CalculatorROS:
     """ROS wrapper for the calculator module"""
 
     def __init__(self, in_topic: str):
 
         self.sub = rospy.Subscriber(in_topic, Point, self.callback)
-        self.pub = rospy.Publisher('calculator_result', CalculatorResult, queue_size=1)
+        self.pub = rospy.Publisher(
+            'calculator_result', CalculatorResult, queue_size=1)
 
     def callback(self, data):
         result = CalculatorResult()

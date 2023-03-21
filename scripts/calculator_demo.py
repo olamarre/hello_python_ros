@@ -1,4 +1,11 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
+
+"""
+    Start calculator ROS wrapper subscriber node
+
+    Author: Olivier Lamarre
+    Affl.: STARS Laboratory, University of Toronto
+"""
 
 import rospy
 from hello_python_ros.calculator import CalculatorROS
